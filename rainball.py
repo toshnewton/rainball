@@ -47,16 +47,29 @@ while True:
     #in this way our wall will move
     if Rad >= maxRadius:
         if ball_obj.left <= 0 or ball_obj.right >= width:
-            speed[0] *= speedMultipler
-            if i == 6:
-                i = -1
-            i+=1
+            if speed[0] > 70 or speed[0] < -70:
+                speed[0] = -speed[0]
+                if i == 6:
+                    i = -1
+                i+=1
+            else:    
+                speed[0] *= speedMultipler
+                if i == 6:
+                    i = -1
+                i+=1
 
         if ball_obj.top <= 0 or ball_obj.bottom >= height:
-            speed[1] *= speedMultipler
-            if i == 6:
-                i = -1
-            i+=1
+            if speed[1] > 70 or speed[1] < -70:
+                speed[1] = -speed[1]
+                if i == 6:
+                    i = -1
+                i+=1
+            else:   
+                speed[1] *= speedMultipler
+                if i == 6:
+                    i = -1
+                i+=1
+        print(speed)
     else:
         if ball_obj.left <= 0 or ball_obj.right >= width:
             speed[0] *= speedMultipler
